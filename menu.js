@@ -98,8 +98,10 @@ console.log(pizzaCategory)
 */
 
 //CODE HERE
-const foodArr = ['name', 'price', 'category', 'popularity', 'ratings', 'tags']
-
+// const foodArr = ['name', 'price', 'category', 'popularity', 'ratings', 'tags']
+const foodArr [
+    name
+]
 
 //////////////////PROBLEM 4////////////////////
 /* 
@@ -114,12 +116,9 @@ const foodArr = ['name', 'price', 'category', 'popularity', 'ratings', 'tags']
 */
 
 //CODE HERE
-
- const filteredFood = foodArr.filter(function )
-     
-
-
+const filteredFood = foodArr.filter((food) => food.tags.includes('kids'))
 console.log(filteredFood)
+ 
  
 
 
