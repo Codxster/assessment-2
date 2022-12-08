@@ -98,10 +98,55 @@ console.log(pizzaCategory)
 */
 
 //CODE HERE
-// const foodArr = ['name', 'price', 'category', 'popularity', 'ratings', 'tags']
-const foodArr [
-    name
+const foodArr = [
+    {
+        name: "pepperoni",
+        price: 9.95,
+        category: "entree",
+        popularity: 10,
+        rating: 7,
+        tags: ['family-friendly', 'greasy']
+    },
+
+    {
+        name: "celery",
+        price: 1.5,
+        category: "veggie",
+        popularity: 2,
+        rating: 7,
+        tags: ['healthy', 'veggie']
+    },
+
+    {
+        name: "bagel",
+        price: 3,
+        category: "appetizer",
+        popularity: 8,
+        rating: 7,
+        tags: ['carbs', 'kosher']
+    },
+
+    {
+        name: "chicken pot pie",
+        price: 5,
+        category: "fruit",
+        popularity: 8,
+        rating: 7,
+        tags: ['family-friendly', 'affordable']
+    },
+
+    {
+        name: "peaches",
+        price: 3,
+        category: "fruit",
+        popularity: 7,
+        rating: 9,
+        tags: ['healthy', 'sweet']
+    },
+
+
 ]
+
 
 //////////////////PROBLEM 4////////////////////
 /* 
@@ -163,6 +208,18 @@ console.log(filteredFood)
 
 //CODE HERE
 
+const filterByProperty = (property, number, type) => {
+    const foodFilter = foodArr.filter((foo) => {
+        if(type === 'above'){
+            return food[property] > number
+        } else {
+            return food[property] < number
+        }
+    })
+
+    return foodFilter
+}
+
 
 /*
     Invoke the `filterByProperty` function passing
@@ -172,3 +229,4 @@ console.log(filteredFood)
 */
 
 //CODE HERE
+console.log(filterByProperty('popularity', 3, 'above'))

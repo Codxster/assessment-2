@@ -147,7 +147,6 @@ const deals = [
 //CODE HERE
 
 // KYLES ANSWER
-
 // console.log(deals[0].title)
 
 deals[0].title = deals[0].title.replace('15', '10')

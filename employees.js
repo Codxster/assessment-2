@@ -20,14 +20,27 @@
 */
 
 //CODE HERE
-class Employee{
-    constructor(name, shifts) {
-        this.name = name
-        this.shifts = shifts
+// class Employee {
+//     constructor(name, shifts) {
+//         this.name = name
+//         this.shifts = shifts
+//     }
+// }
+// const getSchedule = new Employee('cody', 'nights')
+// console.log(`${getSchedule.name} works on ${getSchedule.shifts}`)
+
+// KYLES ANSWER
+class Employee {
+        constructor(name, shifts) {
+            this.name = name
+            this.shifts = shifts
+        }
+   
+        getSchedule() {
+            console.log(`${this.name} works on ${this.shifts}`)
+        }
+   
     }
-}
-const getSchedule = new Employee('cody', 'nights')
-console.log(`${getSchedule.name} works on ${getSchedule.shifts}`)
 
 /*
     Create a new instance of your class.
@@ -42,14 +55,17 @@ console.log(`${getSchedule.name} works on ${getSchedule.shifts}`)
 //CODE HERE
 const empOne = new Employee('jess', 'weekday mornings, weekday afternoons')
 
+// console.log(empOne)
 /*
     Call the `getSchedule` method on the
     `empOne` object.
 */
 
 //CODE HERE
-console.log(`${empOne.name} works on ${empOne.shifts}`)
+// console.log(`${empOne.name} works on ${empOne.shifts}`)
 
+// KYLES ANSWER
+empOne.getSchedule()
 /*
     Make a copy of the empOne object
     using the spread operator.
@@ -63,9 +79,16 @@ console.log(`${empOne.name} works on ${empOne.shifts}`)
 */
 
 //CODE HERE
-let empTwo = {...empOne} 
-    // console.log(empTwo)
+// let empTwo = {...empOne} 
+//     // console.log(empTwo)
 
+// KYLES ANSWER
+
+const empTwo = {...empOne}
+
+empTwo.name = 'Nick'
+
+// console.log(empTwo)
 
 //////////////////PROBLEM 2////////////////////
 /*  
@@ -91,17 +114,32 @@ let empTwo = {...empOne}
 */
 
 //CODE HERE
-class Manager extends Employee {
-    constructor(name, shifts, employees) {
-    super(name, shifts)
-    this.employees = employees
-   }
+// class Manager extends Employee {
+//     constructor(name, shifts, employees) {
+//     super(name, shifts)
+//     this.employees = employees
+//    }
    
+// }
+
+// const getEmployees = new Manager ('Kyle', 'everyday', 'Cody')
+//     console.log(`${getEmployees.name} manages ${getEmployees.employees}`)
+ // KYLES ANSWER
+
+ class Manager extends Employee {
+    constructor (name, shifts, employees) {
+        super (name, shifts) 
+            this.employees = employees     
+    }
+ 
+    getEmployees() {
+        console.log(`${this.name} manages ${this.employees}`)
+    }
+
+    addEmployee(emp) {
+        this.employees.push(emp)
+    }
 }
-
-const getEmployees = new Manager ('Kyle', 'everyday', 'Cody')
-    console.log(`${getEmployees.name} manages ${getEmployees.employees}`)
-
 
 /*
     Create a new instance of your class.
@@ -115,15 +153,16 @@ const getEmployees = new Manager ('Kyle', 'everyday', 'Cody')
 */
 
 //CODE HERE
-const manager = new Manager ('Taylor', 'allday everyday', 'Cece and Schmidt' )
+const manager = new Manager ('Winston', 'weekday mornings, and weekday afternoons', 'Cece and Schmidt', ['Cece', 'Schmidt'] )
 
+console.log(manager)
 /*
     Call the `getEmployees` method on the
     `manager` object.  
 */
 
 //CODE HERE
-new Manager(manager)
+manager.getEmployees()
 /*
     Call the `addEmployee` method on the 
     `manager` object passing in the string 
@@ -131,7 +170,7 @@ new Manager(manager)
 */
 
 //CODE HERE 
-
+manager.addEmployee('Coach')
 /*
     Call the `getEmployees` method on the
     `manager` object again to confirm 
@@ -139,3 +178,5 @@ new Manager(manager)
 */
 
 //CODE HERE
+
+manager.getEmployees()
